@@ -116,14 +116,6 @@ def ensure_percona_release(output_callback):
             output_callback("Installing Percona Release package...\n")
             subprocess.run(["sudo", package_manager, "install", "-y", "https://repo.percona.com/yum/percona-release-latest.noarch.rpm"], check=True)
 
-            # Enable the Percona repository
-            output_callback("Enabling Percona repository...\n")
-            subprocess.run(["sudo", "percona-release", "enable", "original"], check=True)
-
-            # Update package list
-            output_callback("Updating package list...\n")
-            subprocess.run(["sudo", package_manager, "update"], check=True)
-
         else:
             output_callback(f"Unsupported package manager: {package_manager}\n")
             return

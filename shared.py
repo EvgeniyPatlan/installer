@@ -205,22 +205,6 @@ def load_solutions_functions(directory, output_callback=print):
 
     return solutions
 
-def display_options(options, header="Options"):
-    """
-    Display a list of options to the user.
-
-    Args:
-        options (list): The list of options to display.
-        header (str): The header for the display.
-
-    Returns:
-        None
-    """
-    print(header + ":")
-    for i, option in enumerate(options, start=1):
-        print(f"{i}. {option}")
-
-
 # Platform Constants
 SUPPORTED_PLATFORMS = {
     "Ubuntu": ["20.04", "22.04", "24.04"],
